@@ -12,6 +12,13 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      fontFamily: {
+        clash: ['Clash Grotesk', 'sans-serif'],
+        anton: ['Anton', 'sans-serif']
+      },
+      colors: {
+        black: '#111111'
+      }
     },
   },
   plugins: [],
