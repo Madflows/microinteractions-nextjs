@@ -13,8 +13,9 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       fontFamily: {
-        clash: ['Clash Grotesk', 'sans-serif'],
-        anton: ['Anton', 'sans-serif']
+        clash: ['Clash Display', 'sans-serif'],
+        anton: ['Anton', 'sans-serif'],
+        nippo: ['Nippo', 'sans-serif']
       },
       colors: {
         black: '#111111'

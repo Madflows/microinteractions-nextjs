@@ -1,5 +1,6 @@
 import ContactButton from '@/components/ContactButton';
 import Header from '@/components/Header';
+import Loader from '@/components/Loader';
 import MenuManager from '@/components/Menu/MenuManager';
 import { SplitText } from 'gsap/dist/SplitText';
 import { gsap } from 'gsap/dist/gsap';
@@ -28,12 +29,26 @@ function Home() {
       linesClass: 'lineParent',
     });
 
-    tl.from(split.lines, {
-      autoAlpha: 0,
-      yPercent: 100,
-      stagger: 0.3,
-      rotate: '3deg',
+    tl.to(q('.loader-indicator'), {
+      scaleX: 100,
+      duration: 3,
+      ease: 'power2.in'
     })
+      .to(q('.loader-content'), {
+        opacity: 0,
+        duration: 1
+      })
+      .to(q('.loader-container'), {
+        yPercent: 100,
+        duration: 1,
+        ease: "split4.in"
+      })
+      .from(split.lines, {
+        autoAlpha: 0,
+        yPercent: 100,
+        stagger: 0.3,
+        rotate: '3deg',
+      })
       .from(
         brandDescription.lines,
         {
@@ -44,11 +59,12 @@ function Home() {
         '<'
       )
       .from(q('.contact-button'), {
-        yPercent: -50
+        yPercent: -50,
       });
-  }, []);
+  }, [q]);
   return (
-    <div ref={containerRef}>
+    <div ref={containerRef} className='relative'>
+      <Loader />
       <MenuManager>
         <Header />
         <div className='main-container' id='main-container'>
