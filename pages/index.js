@@ -32,7 +32,7 @@ function Home() {
     tl.to(q('.loader-indicator'), {
       scaleX: 100,
       duration: 3,
-      ease: 'power2.in'
+      ease: 'power4.in'
     })
       .to(q('.loader-content'), {
         opacity: 0,
